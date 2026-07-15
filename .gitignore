@@ -1,0 +1,8 @@
+# Per-project Spec-Kit state (created by speckit-specify at runtime) --
+# this repo ships the engine, not any one project's in-progress state.
+.specify/feature.json
+specs/
+
+# OS cruft
+.DS_Store
+Thumbs.db
