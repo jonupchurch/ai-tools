@@ -1,18 +1,22 @@
 # ai-tools
 
-A portable reference toolkit for working fast, with Claude Code, in a
-codebase you've never seen before — built for scenarios like a live
-technical interview: dropped into an unfamiliar repo, working with a
-client/interviewer to scope and ship a solution, on the clock.
+A portable reference toolkit for building software well with Claude Code —
+in a greenfield project you own or a codebase you've never seen before. It
+bundles a spec-driven process, a set of subagents and slash commands, and
+framework starting points so a new session lands with the discipline and
+tooling already in place. Working a live technical interview or client
+scoping session on the clock is one supported mode (see
+`docs/interview-cheat-sheet.md`), not the whole of it.
 
 ## What's in here
 
 - **`CLAUDE.md` + `AGENTS.md`** — the always-on operating context. `AGENTS.md`
-  holds the six rules (clarify, validate trust boundaries, match conventions,
-  scope discipline, verify, narrate) in a tool-neutral form other agents
-  (Cursor, etc.) also read; `CLAUDE.md` imports it and adds the Claude-Code
-  toolkit pointers. Unlike the constitution and cheat sheet, these load into
-  every turn's context automatically.
+  holds the nine rules (clarify, validate trust boundaries, match conventions,
+  scope discipline, verify, narrate, plan-the-whole-feature-set, test at the
+  right level, atomic-commits/feature-branch) in a tool-neutral form other
+  agents (Cursor, etc.) also read; `CLAUDE.md` imports it and adds the
+  Claude-Code toolkit pointers. Unlike the constitution and cheat sheet, these
+  load into every turn's context automatically.
 - **`.claude/agents/`** — read-only subagents to delegate to:
   - **`codebase-scout`** — reconnaissance. Spin it off in the background to map
     an unfamiliar repo (architecture, relevant files, existing patterns, open
@@ -39,12 +43,13 @@ client/interviewer to scope and ship a solution, on the clock.
 - **`.claude/skills/speckit-*`** — the actual slash-command skills that
   drive Spec-Kit (`specify`, `plan`, `tasks`, `clarify`, `analyze`,
   `checklist`, `implement`, `constitution`, `converge`, `taskstoissues`).
-- **`.specify/memory/constitution.md`** — a generic constitution
-  distilling the process discipline this toolkit is built around
-  (clarify before building, match existing conventions, scope
-  discipline, verify before calling it done, narrate the reasoning),
-  reframed for "someone else's existing codebase, under time pressure"
-  rather than a greenfield build.
+- **`.specify/memory/constitution.md`** — the general engineering-process
+  constitution the toolkit is built around: nine principles (clarify before
+  building, validated trust boundaries, match conventions, scope discipline,
+  verify, narrate, plan the whole feature set first, test at the right level,
+  atomic commits on a feature branch). Applies to greenfield-owned and
+  unfamiliar codebases alike; the time-boxed/live mode is documented as one
+  explicit exception in its Governance section.
 - **`docs/interview-cheat-sheet.md`** — the same discipline, condensed
   to one page you can actually glance at mid-conversation.
 
