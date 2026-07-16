@@ -1,8 +1,65 @@
-# Per-project Spec-Kit state (created by speckit-specify at runtime) --
-# this repo ships the engine, not any one project's in-progress state.
-.specify/feature.json
-specs/
+# Speckit files (.specify/, .claude/) are intentionally NOT ignored --
+# they're part of the repo's process narrative. Exceptions:
+# - settings.local.json, Claude Code's own convention for machine-local
+#   permissions/paths that were never meant to be shared.
+# - the Neon agent-skills auto-installed by `vercel integration add neon`
+#   (.claude/skills/neon, .claude/skills/neon-postgres): these are
+#   absolute-path symlinks into .agents/skills/, which breaks if the repo
+#   is cloned to a different path, and Git-on-Windows often mishandles
+#   symlinks on checkout anyway. Re-run `vercel integration add neon` (or
+#   `npx skills add https://github.com/neondatabase/agent-skills`) to
+#   reinstall locally if needed.
+.claude/settings.local.json
+.claude/skills/neon
+.claude/skills/neon-postgres
+.agents/
+skills-lock.json
 
-# OS cruft
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# testing (vitest coverage, playwright artifacts)
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (never commit secrets)
+.env*
+!.env.example
+
+# OS files
 .DS_Store
 Thumbs.db
+*.pem
+
+.vercel
+.env*
