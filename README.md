@@ -10,6 +10,10 @@ scoping session on the clock is one supported mode (see
 
 ## What's in here
 
+- **`MANIFEST.md`** — the routable catalog for any AI agent: every asset, its
+  trigger, and how to invoke it, plus the precedence rule and working flow.
+  The fastest way for another agent — or another tool that doesn't auto-load
+  `CLAUDE.md` — to understand and act on the whole toolkit.
 - **`CLAUDE.md` + `AGENTS.md`** — the always-on operating context. `AGENTS.md`
   holds the nine rules (clarify, validate trust boundaries, match conventions,
   scope discipline, verify, narrate, plan-the-whole-feature-set, test at the
@@ -64,13 +68,14 @@ to do with this one).
 ```bash
 git clone https://github.com/jonupchurch/ai-tools.git /tmp/ai-tools
 cp -r /tmp/ai-tools/.claude /tmp/ai-tools/.specify /tmp/ai-tools/stacks \
-      /tmp/ai-tools/CLAUDE.md /tmp/ai-tools/AGENTS.md /path/to/target-repo/
+      /tmp/ai-tools/CLAUDE.md /tmp/ai-tools/AGENTS.md /tmp/ai-tools/MANIFEST.md \
+      /path/to/target-repo/
 ```
 
 **PowerShell:**
 ```powershell
 git clone https://github.com/jonupchurch/ai-tools.git C:\temp\ai-tools
-Copy-Item -Recurse C:\temp\ai-tools\.claude, C:\temp\ai-tools\.specify, C:\temp\ai-tools\stacks, C:\temp\ai-tools\CLAUDE.md, C:\temp\ai-tools\AGENTS.md -Destination C:\path\to\target-repo\
+Copy-Item -Recurse C:\temp\ai-tools\.claude, C:\temp\ai-tools\.specify, C:\temp\ai-tools\stacks, C:\temp\ai-tools\CLAUDE.md, C:\temp\ai-tools\AGENTS.md, C:\temp\ai-tools\MANIFEST.md -Destination C:\path\to\target-repo\
 ```
 
 > **If the target repo already has a `.claude/settings.json`, `CLAUDE.md`, or

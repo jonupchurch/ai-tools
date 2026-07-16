@@ -8,7 +8,8 @@ live in `@AGENTS.md` — read them; they govern how to work here.
 ## Claude Code toolkit available in this repo
 
 This repo ships a portable toolkit (`.claude/` + `.specify/`) meant to travel
-into whatever codebase you're working in. What's on hand:
+into whatever codebase you're working in. `MANIFEST.md` is the full routable
+catalog (every asset, its trigger, and how to invoke it); the highlights:
 
 - **`codebase-scout` subagent** — read-only reconnaissance. Spin it off in the
   background to map an unfamiliar repo (architecture, relevant files, existing

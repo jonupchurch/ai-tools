@@ -5,7 +5,9 @@
 > alongside `.claude/` and `.specify/`. The **target codebase's own
 > conventions always win** where they conflict with anything here.
 > Full rationale lives in `.specify/memory/constitution.md`; the one-page
-> time-boxed/interview version is `docs/interview-cheat-sheet.md`.
+> time-boxed/interview version is `docs/interview-cheat-sheet.md`; the routable
+> catalog of every toolkit asset (agents, commands, skills, stacks) is
+> `MANIFEST.md`.
 
 This applies whether you're building greenfield in a project you own or
 dropped into an unfamiliar codebase — and sometimes under live time
